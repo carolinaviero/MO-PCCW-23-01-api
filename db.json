@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Best book ever",
+      "price": 30
+    },
+    {
+      "id": 2,
+      "name": "Best pen ever",
+      "price": 1
+    },
+    {
+      "id": 3,
+      "name": "Best water bottle ever",
+      "price": 15
+    },
+    {
+      "id": 4,
+      "name": "Best mobile phone ever",
+      "price": 400
+    }
+  ]
+}
