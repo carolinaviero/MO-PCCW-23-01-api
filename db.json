@@ -20,5 +20,22 @@
       "name": "Best mobile phone ever",
       "price": 400
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "beyonce@singer.com",
+      "password": "amazingPassword"
+    },
+    {
+      "id": 2,
+      "email": "jayz@singer.com",
+      "password": "goodPassword"
+    },
+    {
+      "id": 4,
+      "password": "$2b$10$Kbx0mOESr/AW997.MehE.OMRg4tjAIE6owU03XNbM3HG8T0QqjXc6",
+      "email": "madonna@singer.com"
+    }
   ]
 }
