@@ -36,6 +36,16 @@
       "id": 4,
       "password": "$2b$10$Kbx0mOESr/AW997.MehE.OMRg4tjAIE6owU03XNbM3HG8T0QqjXc6",
       "email": "madonna@singer.com"
+    },
+    {
+      "id": 5,
+      "password": "$2b$10$BN5qD4/7mjTe0/4/F/EBWu8XtI4OEvzh4vFcMMIhxKjATHrg9L9Ii",
+      "email": "bieber@singer.com"
+    },
+    {
+      "id": 5,
+      "password": "$2b$10$X0.MIUOJMt1XvnLgmuagsemh.8Ju8VCkDzUOYuJO/2L71uECG4tqy",
+      "email": "hailey@model.com"
     }
   ]
 }
