@@ -20,8 +20,6 @@ const getProductById = (req, res) => {
     res.send(foundProduct);
 };
 
-// at 4:30seconds in he grabbing Remote - Containers
-
 const createProduct = (req, res) => {
     db.get('products').push(req.body).write();
 

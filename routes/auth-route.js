@@ -4,7 +4,8 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter);
-const bcrypt = require('bcrypt');   
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 router.post('/login', async (req, res, next) => {
     const user = db.get('users').find({ email: req.body.email }).value();
@@ -12,7 +13,8 @@ router.post('/login', async (req, res, next) => {
     const validPassword = await bcrypt.compare(req.body.password, user.password);
    
     if (req.body.email === user.email && validPassword) {
-      res.status(200).cookie('login', true).send('Welcome!');
+      const token = jwt.sign({ id: user.id }, 'mySecret');
+      res.status(200).cookie('token', token).send('Welcome user!');
     } else {
       res.status(401).send('Wrong password or email');
     }
@@ -31,7 +33,22 @@ router.post('/signup', async (req, res) => {
       .write();
     res.sendStatus(201);
    });
-   
+
+
+const authenticationMiddleware = (req, res, next) => {
+  if (!req.cookies.token) {
+    res.status(403).send('Unauthorized');
+  } else {
+    jwt.verify(req.cookies.token, 'mySecret', (err, decoded) => {
+      req.userId = decoded.id;
+      next();
+    });
+  }
+};
+
+router.get('/secret', authenticationMiddleware, (req, res) => {
+  res.send('Welcome to the secret route!')
+});
 
 
 module.exports = router;
